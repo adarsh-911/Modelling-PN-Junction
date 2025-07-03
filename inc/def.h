@@ -15,6 +15,8 @@
 
 #define MOB_ELEC    0.135
 #define MOB_HOLE    0.048
+#define LYF_TM_HOLE (1e-6)
+#define LYF_TM_ELEC (1e-6)
 
 // Point structure
 typedef struct Point {

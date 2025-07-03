@@ -15,8 +15,8 @@ void generate_jacobian() {
       else jacobian[i][j] = 0;
     }
   }
-  jacobian[0][0] = 1;
-  jacobian[MESH_SIZE - 1][MESH_SIZE - 1] = 1;
+  jacobian[0][0] = 1.0;
+  jacobian[MESH_SIZE - 1][MESH_SIZE - 1] = 1.0;
 
   return ;
 }

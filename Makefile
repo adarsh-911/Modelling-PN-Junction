@@ -8,7 +8,9 @@ CFLAGS = -Wextra -O2 -Iinc
 SRCS = main.c \
        src/equillibrium.c \
        src/init.c \
-       src/poisson_solver.c
+       src/poisson_solver.c \
+			 src/steady_state/non_linear_newton.c \
+			 src/steady_state/steady_state.c
 
 # Object files
 OBJS = $(SRCS:.c=.o)

@@ -11,7 +11,7 @@ void run_to_equillibrium() {
     poisson_update_main();
     
     // Boltzmann Approximation (at equillibrium)
-    for (int i = 0 ; i < MESH_SIZE ; i++) {
+    for (int i = 1 ; i < MESH_SIZE - 1 ; i++) {
       points[i].elec_conc = EFF_DEN_NC * exp((Q_CHARGE * points[i].voltage) /(BOLTZ_CONST * TEMP));
       points[i].hole_conc = EFF_DEN_NV * exp(-(Q_CHARGE * points[i].voltage + BAND_GAP) /(BOLTZ_CONST * TEMP));
     }

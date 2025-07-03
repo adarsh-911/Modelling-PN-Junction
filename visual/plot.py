@@ -11,7 +11,7 @@ hole_conc = [math.log(p["p"]) for p in data]
 elec_conc = [math.log(p["n"]) for p in data]
 
 if str(sys.argv[1]) == "potential" :
-  plt.plot(potential)
+  plt.plot(potential, label = "V")
   plt.title("Potential V")
 elif str(sys.argv[1]) == "concentration" :
   plt.plot(hole_conc, color = "r", label = "p")
