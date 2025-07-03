@@ -140,8 +140,6 @@ void find_conc_update (char* name) {
 
     update_arr[i] = sum / jacobian[i][i];
   }
-  update_arr[0] = 0.0;
-  update_arr[MESH_SIZE - 1] = 0.0;
 
   return ;
 }
@@ -164,7 +162,7 @@ void scharfetter_gummel_main() {
   find_conc_update("electrons");
 
   // Update the changes
-  for (int i = 1 ; i < MESH_SIZE - 1 ; i++) {
+  for (int i = 0 ; i < MESH_SIZE ; i++) {
     points[i].hole_conc = hole_conc_inst[i];
     points[i].elec_conc = elec_conc_inst[i];
   }
