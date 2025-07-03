@@ -40,8 +40,10 @@ void print_elements(char* name) {
   printf("%s\n", name);
   printf("---------------------------------------------------------------------------------\n");
 
-  for (int i = 0 ; i < MESH_SIZE ; i++)
-    printf("V = %e\tn = %e\tp = %e\n", points[i].voltage, points[i].elec_conc, points[i].hole_conc);
+  for (int i = 0 ; i < MESH_SIZE ; i++) {
+    if (!strcmp(name, "Equillibrium condition")) printf("V = %e\tn = %e\tp = %e\n", points_eq[i].voltage, points_eq[i].elec_conc, points_eq[i].hole_conc);
+    else if (!strcmp(name, "Steady state condition")) printf("V = %e\tn = %e\tp = %e\n", points[i].voltage, points[i].elec_conc, points[i].hole_conc);
+  }
 
   return ;
 }

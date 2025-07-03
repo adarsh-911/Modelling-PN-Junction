@@ -2,6 +2,7 @@
 #include "inc/equillibrium.h"
 #include "inc/steady_state/steady_state.h"
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
@@ -10,9 +11,6 @@ int main() {
 
   // Run the device to equillibrium
   run_to_equillibrium();
-
-  // Print converged values
-  print_elements("Equillibrium condition");
 
   // Copy to new array
   write_eq_points();
@@ -23,11 +21,19 @@ int main() {
   // Run the device to steady state
   run_to_steady_state();
 
-  // Print converged values
-  print_elements("Steady state condition");
-
   // Export to json
   export_to_json();
+  
+  // Optional print
+  char op[2];
+  printf("---------------------------------------------------------------------------------\n");
+  printf("Print converged values? (y/n): ");
+  if (scanf("%s", op) != 1) return 1;
+
+  if (!strcmp(op, "y")) {
+    print_elements("Equillibrium condition");
+    print_elements("Steady state condition");
+  }
 
   return 0;
 }

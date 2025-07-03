@@ -2,7 +2,7 @@
 CC = gcc
 
 # Compiler flags
-CFLAGS = -Wextra -O2 -Iinc
+CFLAGS = -O2 -Iinc
 
 # Source files
 SRCS = main.c \
